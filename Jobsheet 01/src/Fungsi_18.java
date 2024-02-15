@@ -19,6 +19,8 @@ public class Fungsi_18 {
 
         hitungDanTampilkanPendapatan(cabangToko, stockBunga, hargaBunga);
 
+        tampilkanStockBungaPerCabang(cabangToko, stockBunga);
+
         tampilkanStockBungaSetelahDikurangi(cabangToko, stockBunga);
     }
 

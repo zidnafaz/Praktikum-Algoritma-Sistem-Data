@@ -23,6 +23,7 @@ public class BukuMain18_1 {
 
         Buku18_1 bk3 = new Buku18_1("Sebuah Seni untuk Bersikap Bodo Amat", "Mark Manson", 246, 100, 85000);
         int stokTerjual = 26;
+        bk3.terjual(26);
         int hargaTotal = bk3.hitungHargaTotal(stokTerjual);
         int diskon = bk3.hitungDiskon(hargaTotal);
         int hargaBayar = bk3.hitungHargaBayar(hargaTotal, diskon);

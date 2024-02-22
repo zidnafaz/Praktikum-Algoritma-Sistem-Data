@@ -1,5 +1,5 @@
 public class Buku18_1 {
-    String judul, pengarang;
+    String judul, pengarang, pesan;
     int halaman, stok, harga;
 
     public Buku18_1() {
@@ -19,13 +19,27 @@ public class Buku18_1 {
         System.out.println("Judul : " + judul);
         System.out.println("Pengarang : " + pengarang);
         System.out.println("Jumlah Halaman : " + halaman);
-        System.out.println("Sisa Stok : " + stok);
+        pesan = getStok();
+        System.out.println("Sisa Stok : " + pesan);
         System.out.println("Harga : Rp" + harga);
 
     }
 
-    void terjual(int jml) {
-        stok -= jml;
+    public String getStok() {
+        pesan = "" + stok;
+        return pesan;
+    }
+
+    String terjual(Integer jml) {
+        stok -= jml;        
+
+        if (stok <= 0) {
+            pesan = "Maaf, stok buku ini kosong atau jumlah yang diminta melebihi stok yang tersedia."; 
+        } else {
+            pesan = "" + stok;
+        }
+
+        return pesan;
     }
 
     void restok(int jml) {

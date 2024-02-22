@@ -17,6 +17,10 @@ public class BukuMain18_1 {
         bk2.terjual(11);
         bk2.tampilInformasi();
 
+        Buku18_1 bukuFaza = new Buku18_1("Why Me", "M. Z. Bilah Faza", 177, 100, 89000);
+        bukuFaza.terjual(78);
+        bukuFaza.tampilInformasi();
+
         Buku18_1 bk3 = new Buku18_1("Sebuah Seni untuk Bersikap Bodo Amat", "Mark Manson", 246, 100, 85000);
         int stokTerjual = 26;
         int hargaTotal = bk3.hitungHargaTotal(stokTerjual);

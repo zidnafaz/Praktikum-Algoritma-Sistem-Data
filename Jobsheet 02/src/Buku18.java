@@ -19,19 +19,24 @@ public class Buku18 {
         System.out.println("Judul : " + judul);
         System.out.println("Pengarang : " + pengarang);
         System.out.println("Jumlah Halaman : " + halaman);
+        pesan = getStok();
         System.out.println("Sisa Stok : " + pesan);
         System.out.println("Harga : Rp" + harga);
 
     }
 
-    String terjual(int jml) {
-        
-        stok -= jml;
+    public String getStok() {
+        pesan = "" + stok;
+        return pesan;
+    }
+
+    String terjual(Integer jml) {
+        stok -= jml;        
 
         if (stok <= 0) {
             pesan = "Maaf, stok buku ini kosong atau jumlah yang diminta melebihi stok yang tersedia."; 
         } else {
-            pesan = "" + jml;
+            pesan = "" + stok;
         }
 
         return pesan;

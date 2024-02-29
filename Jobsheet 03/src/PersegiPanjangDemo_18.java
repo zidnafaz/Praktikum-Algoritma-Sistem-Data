@@ -5,6 +5,8 @@ public class PersegiPanjangDemo_18 {
         Scanner input18 = new Scanner(System.in);
         PersegiPanjang_18[] arrayOfPersegiPanjang = new PersegiPanjang_18[3];
 
+        int panjang = 0, lebar = 0;
+
         // Percobaan 1
 
         // arrayOfPersegiPanjang[0] = new PersegiPanjang_18();
@@ -30,7 +32,7 @@ public class PersegiPanjangDemo_18 {
         // + arrayOfPersegiPanjang[2].lebar);
 
         for (int i = 0; i < arrayOfPersegiPanjang.length; i++) {
-            arrayOfPersegiPanjang[i] = new PersegiPanjang_18();
+            arrayOfPersegiPanjang[i] = new PersegiPanjang_18(panjang, lebar);
 
             System.out.println("Persegi panjang ke-" + (i + 1));
             System.out.print("Masukkan Panjang    : ");

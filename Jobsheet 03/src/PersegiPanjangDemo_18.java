@@ -43,9 +43,13 @@ public class PersegiPanjangDemo_18 {
             arrayOfPersegiPanjang[i] = new PersegiPanjang_18(panjang, lebar);
         }
 
+        // for (int i = 0; i < arrayOfPersegiPanjang.length; i++) {
+        //     System.out.println("\nPersegi Panjang ke-" + (i + 1) + "\nPanjang   : " + arrayOfPersegiPanjang[i].panjang
+        //             + "\nLebar     : " + arrayOfPersegiPanjang[i].lebar);
+        // }
+
         for (int i = 0; i < arrayOfPersegiPanjang.length; i++) {
-            System.out.println("\nPersegi Panjang ke-" + (i + 1) + "\nPanjang   : " + arrayOfPersegiPanjang[i].panjang
-                    + "\nLebar     : " + arrayOfPersegiPanjang[i].lebar);
+            arrayOfPersegiPanjang[i].cetakInfo();
         }
     }
 }

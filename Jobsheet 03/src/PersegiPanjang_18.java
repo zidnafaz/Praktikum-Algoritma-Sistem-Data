@@ -7,4 +7,9 @@ public class PersegiPanjang_18 {
         panjang = p;
         lebar = l;
     }
+
+    public void cetakInfo() {
+        System.out.println("\nPanjang     : " + panjang);
+        System.out.println("Lebar       : " + lebar);
+    }
 }

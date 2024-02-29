@@ -32,14 +32,15 @@ public class PersegiPanjangDemo_18 {
         // + arrayOfPersegiPanjang[2].lebar);
 
         for (int i = 0; i < arrayOfPersegiPanjang.length; i++) {
-            arrayOfPersegiPanjang[i] = new PersegiPanjang_18(panjang, lebar);
-
+                        
             System.out.println("Persegi panjang ke-" + (i + 1));
             System.out.print("Masukkan Panjang    : ");
-            arrayOfPersegiPanjang[i].panjang = input18.nextInt();
+            panjang = input18.nextInt();
             System.out.print("Masukkan Lebar      : ");
-            arrayOfPersegiPanjang[i].lebar = input18.nextInt();
+            lebar = input18.nextInt();
             System.out.println();
+
+            arrayOfPersegiPanjang[i] = new PersegiPanjang_18(panjang, lebar);
         }
 
         for (int i = 0; i < arrayOfPersegiPanjang.length; i++) {

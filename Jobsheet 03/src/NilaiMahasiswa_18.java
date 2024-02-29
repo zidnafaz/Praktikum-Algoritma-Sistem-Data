@@ -1,7 +1,5 @@
 public class NilaiMahasiswa_18 {
 
-    
-
     public String nama;
     public int NIM;
     public String jenisKelamin;

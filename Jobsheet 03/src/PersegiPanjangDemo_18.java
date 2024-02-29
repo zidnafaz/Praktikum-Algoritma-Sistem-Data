@@ -3,7 +3,10 @@ import java.util.Scanner;
 public class PersegiPanjangDemo_18 {
     public static void main(String[] args) {
         Scanner input18 = new Scanner(System.in);
-        PersegiPanjang_18[] arrayOfPersegiPanjang = new PersegiPanjang_18[3];
+
+        System.out.print("Tentukan Jumlah Persegi     : ");
+        int panjangArray = input18.nextInt();
+        PersegiPanjang_18[] arrayOfPersegiPanjang = new PersegiPanjang_18[panjangArray];
 
         int panjang = 0, lebar = 0;
 
@@ -33,14 +36,15 @@ public class PersegiPanjangDemo_18 {
 
         for (int i = 0; i < arrayOfPersegiPanjang.length; i++) {
                         
-            System.out.println("Persegi panjang ke-" + (i + 1));
+            System.out.println("\nPersegi panjang ke-" + (i + 1));
             System.out.print("Masukkan Panjang    : ");
             panjang = input18.nextInt();
             System.out.print("Masukkan Lebar      : ");
             lebar = input18.nextInt();
-            System.out.println();
 
             arrayOfPersegiPanjang[i] = new PersegiPanjang_18(panjang, lebar);
+            arrayOfPersegiPanjang[i].hitungLuas();
+            arrayOfPersegiPanjang[i].hitungKeliling();
         }
 
         // for (int i = 0; i < arrayOfPersegiPanjang.length; i++) {

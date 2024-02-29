@@ -3,6 +3,9 @@ import java.text.DecimalFormat;
 
 public class MainNilaiMahasiswa_18 {
     public static void main(String[] args) {
+
+        // Tugas 1
+        
         Scanner input18 = new Scanner(System.in);
 
         NilaiMahasiswa_18[] arrayOfNilaimahasiswa = new NilaiMahasiswa_18[3];

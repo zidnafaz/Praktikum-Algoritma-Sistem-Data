@@ -2,6 +2,19 @@ public class Pangkat {
     
     public int nilai, pangkat;
 
+    public Pangkat(int nilai, int pangkat) {
+        this.nilai = nilai;
+        this.pangkat = pangkat;
+    }
+
+    public int getNilai() {
+        return nilai;
+    }
+
+    public int getPangkat() {
+        return pangkat;
+    }
+
     public int pangkatBF(int a, int n) {
 
         int hasil = 1;
@@ -21,11 +34,11 @@ public class Pangkat {
 
         } else {
 
-            if (n % 2 == 1) {
+            if (n % 2 == 1) { // Bilangan Ganjil
                 
                 return (pangkatDC(a, n/2) * pangkatDC(a, n/2) * a);
 
-            } else {
+            } else { // Bilangan Genap
 
                 return (pangkatDC(a, n/2) * pangkatDC(a, n/2));
                 

@@ -18,7 +18,7 @@ public class Sum {
 
         }
 
-        return total;
+        return Math.round(total * 100.0) / 100.0;
     }
 
     double totalDC(double arr[], int l, int r) {
@@ -34,7 +34,7 @@ public class Sum {
             double lsum = totalDC(arr, l, mid - 1);
             double rsum = totalDC(arr, mid + 1, r);
 
-            return lsum + rsum + arr[mid];
+            return Math.round((lsum + rsum + arr[mid]) * 100.0) / 100.0;
 
         }
 

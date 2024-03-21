@@ -27,10 +27,10 @@ public class MainPenginapan_18 {
 
         do {
             System.out.println("1. Tampilkan penginapan sebelum sorting");
-            System.out.println("2. Tampil penginapan berdasarkan harga (Asc)");
-            System.out.println("3. Tampil penginapan berdasarkan harga (Desc)");
-            System.out.println("4. Tampil penginapan berdasarkan rating (Asc)");
-            System.out.println("5. Tampil penginapan berdasarkan rating (Desc)");
+            System.out.println("2. Tampilkan penginapan berdasarkan harga (Asc)");
+            System.out.println("3. Tampilkan penginapan berdasarkan harga (Desc)");
+            System.out.println("4. Tampilkan penginapan berdasarkan rating (Asc)");
+            System.out.println("5. Tampilkan penginapan berdasarkan rating (Desc)");
             System.out.println("6. Keluar");
             header();
             System.out.print("Masukkan Pilihan    : ");
@@ -39,8 +39,9 @@ public class MainPenginapan_18 {
             switch (pilihan) {
                 case 1:
                     header();
-                    listPenginapan.tampil();
+                    System.out.println("        Daftar Penginapan Sebelum Sorting");
                     header();
+                    listPenginapan.tampil();
                     break;
                 case 2:
                     header();

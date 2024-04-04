@@ -20,6 +20,8 @@ public class StackMainPakaian_18 {
             System.out.println("2. Pop");
             System.out.println("3. Peek");
             System.out.println("4. Print");
+            System.out.println("5. Sorting harga tertinggi");
+            System.out.println("6. Sorting harga terendah");
             System.out.println("0. Exit");
             System.out.println("==============================");
             System.out.print("Masukkan pilihan : ");
@@ -64,6 +66,12 @@ public class StackMainPakaian_18 {
                 case 4:
                     System.out.println("==============================");
                     stack.print();
+                    break;
+                case 5:
+                    stack.getMax();
+                    break;
+                case 6:
+                    stack.getMin();
                     break;
                 case 0:
                     System.out.println("==============================");

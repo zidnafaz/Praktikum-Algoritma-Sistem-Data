@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class StackPakaian_18 {
 
     int size;
@@ -69,6 +71,67 @@ public class StackPakaian_18 {
         } else {
             System.out.println("Stack masih kosong");
         }
+    }
+
+    public void getMax() {
+        sortByHighestPrice();
+    }
+    
+    public void getMin() {
+        sortByLowestPrice();
+    }
+
+    private void sortByHighestPrice() {
+        Pakaian_18[] sortedData = Arrays.copyOf(data, top + 1);
+        
+        for (int i = 0; i < sortedData.length - 1; i++) {
+            for (int j = 0; j < sortedData.length - i - 1; j++) {
+                if (sortedData[j].harga < sortedData[j + 1].harga) {
+                    Pakaian_18 temp = sortedData[j];
+                    sortedData[j] = sortedData[j + 1];
+                    sortedData[j + 1] = temp;
+                }
+            }
+        }
+
+        if (!isEmpty()) {
+            System.out.println("============================================================");
+            System.out.println("     Data Pakaian dari Harga Tertinggi ke Terendah:");
+            System.out.println("============================================================");
+            for (Pakaian_18 pakaian : sortedData) {
+                System.out.println(pakaian.jenis + " " + pakaian.warna + " " + pakaian.merk + " "
+                        + pakaian.ukuran + " " + pakaian.harga);
+            }
+        } else {
+            System.out.println("Stack masih kosong");
+        }
+    }
+
+    private void sortByLowestPrice() {
+        Pakaian_18[] sortedData = Arrays.copyOf(data, top + 1);
+        
+        for (int i = 0; i < sortedData.length - 1; i++) {
+            for (int j = 0; j < sortedData.length - i - 1; j++) {
+                if (sortedData[j].harga > sortedData[j + 1].harga) {
+                    Pakaian_18 temp = sortedData[j];
+                    sortedData[j] = sortedData[j + 1];
+                    sortedData[j + 1] = temp;
+                }
+            }
+        }
+
+        if (!isEmpty()) {
+            System.out.println("============================================================");
+            System.out.println("       Data Pakaian dari Harga Terendah ke Tertinggi:");
+            System.out.println("============================================================");
+            for (Pakaian_18 pakaian : sortedData) {
+                System.out.println(pakaian.jenis + " " + pakaian.warna + " " + pakaian.merk + " "
+                        + pakaian.ukuran + " " + pakaian.harga);
+            }
+        } else {
+            System.out.println("Stack masih kosong");
+        }
+
     }
 
 }

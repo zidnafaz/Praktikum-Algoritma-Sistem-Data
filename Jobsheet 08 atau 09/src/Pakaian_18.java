@@ -10,7 +10,4 @@ public class Pakaian_18 {
         this.ukuran = ukuran;
         this.harga = harga;
     }
-
-    
-
 }

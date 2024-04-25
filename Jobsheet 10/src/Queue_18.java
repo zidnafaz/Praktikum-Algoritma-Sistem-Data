@@ -5,28 +5,22 @@ public class Queue_18 {
     int rear;
     int size;
     int max;
+    boolean stopped;
 
     public Queue_18(int n) {
         max = n;
         data = new int[max];
         size = 0;
         front = rear = -1;
+        stopped = false;
     }
 
     public boolean IsEmpty() {
-        if (size == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return size == 0;
     }
 
     public boolean IsFull() {
-        if (size == max) {
-            return true;
-        } else {
-            return false;
-        }
+        return size == max;
     }
 
     public void peek() {
@@ -34,12 +28,14 @@ public class Queue_18 {
             System.out.println("Elemen terdepan         : " + data[front]);
         } else {
             System.out.println("Queue masih kosong");
+            stopProgram();
         }
     }
 
     public void print() {
         if (IsEmpty()) {
             System.out.println("Queue masih kosong");
+            stopProgram();
         } else {
             System.out.println("-------------------------------------------");
             int i = front;
@@ -60,12 +56,14 @@ public class Queue_18 {
             System.out.println("Queue berhasil dikosongkan");
         } else {
             System.out.println("Queue masih kosong");
+            stopProgram();
         }
     }
 
     public void Enqueue(int dt) {
         if (IsFull()) {
             System.out.println("Queue sudah penuh");
+            stopProgram();
         } else {
             if (IsEmpty()) {
                 front = rear = 0;
@@ -85,6 +83,7 @@ public class Queue_18 {
         int dt = 0;
         if (IsEmpty()) {
             System.out.println("Queue masih kosong");
+            stopProgram();
         } else {
             dt = data[front];
             size--;
@@ -101,4 +100,11 @@ public class Queue_18 {
         return dt;
     }
 
+    private void stopProgram() {
+        stopped = true;
+    }
+
+    public boolean isStopped() {
+        return stopped;
+    }
 }

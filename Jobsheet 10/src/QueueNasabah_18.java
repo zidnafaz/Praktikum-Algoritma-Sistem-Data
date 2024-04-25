@@ -44,6 +44,21 @@ public class QueueNasabah_18 {
         }
     }
 
+    public void peekRear() {
+        if (!IsEmpty()) {
+            System.out.println("========================================");
+            System.out.println("            ELEMEN TERDEPAN");
+            System.out.println("========================================");
+            System.out.println("Nomor Rekening : " + data[rear].norek);
+            System.out.println("Nama           : " + data[rear].nama);
+            System.out.println("Alamat         : " + data[rear].alamat);
+            System.out.println("Umur           : " + data[rear].umur);
+            System.out.println("Saldo          : " + data[rear].saldo);
+        } else {
+            System.out.println("Queue masih kosong");
+        }
+    }
+
     public void print() {
         if (IsEmpty()) {
             System.out.println("Queue masih kosong");

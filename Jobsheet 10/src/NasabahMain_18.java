@@ -4,7 +4,7 @@ public class NasabahMain_18 {
     public static void main(String[] args) {
         Scanner input18 = new Scanner(System.in);
         Scanner inputString18 = new Scanner(System.in);
-        
+
         System.out.print("Masukan kapasitas antrian   : ");
         int jumlah = input18.nextInt();
 
@@ -57,10 +57,18 @@ public class NasabahMain_18 {
                     antri.print();
                     break;
 
+                case 5:
+                    antri.peekRear();
+                    break;
+                    
                 default:
                     break;
             }
         } while (pilihan != 5);
+
+        input18.close();
+        inputString18.close();
+
     }
 
     public static void menu() {
@@ -71,7 +79,8 @@ public class NasabahMain_18 {
         System.out.println("2. Antrian Keluar");
         System.out.println("3. Cek Antrian Terdepan");
         System.out.println("4. Cek Semua Antrian");
-        System.out.println("5. Keluar");
+        System.out.println("5. Cek Antrian Terbelakang");
+        System.out.println("6. Keluar");
         System.out.println("========================================");
     }
 }

@@ -22,7 +22,7 @@ public class LinkedList_18 {
         } else {
 
             System.out.println("Linked List Kosong");
-            
+
         }
     }
 
@@ -54,17 +54,17 @@ public class LinkedList_18 {
             }
 
             currentNode.next = newNode;
-            
+
         }
 
     }
 
     public void InsertAfter(int key, int input) {
-        
+
         Node_18 newNode = new Node_18(input, null);
 
         if (!IsEmpty()) {
-            
+
             Node_18 currentNode = head;
 
             do {
@@ -74,7 +74,7 @@ public class LinkedList_18 {
                     currentNode.next = newNode;
                     break;
                 }
-                
+
                 currentNode = currentNode.next;
 
             } while (currentNode != null);
@@ -82,7 +82,7 @@ public class LinkedList_18 {
         } else {
 
             System.out.println("Linked List Kosong");
-            
+
         }
 
     }
@@ -148,10 +148,10 @@ public class LinkedList_18 {
 
             while (currentNode.next != null) {
                 if (currentNode.next.next == null) {
-                    currentNode.next= null;
+                    currentNode.next = null;
                     break;
                 }
-                
+
                 currentNode = currentNode.next;
 
             }
@@ -183,8 +183,7 @@ public class LinkedList_18 {
 
     }
 
-
-    // Pertanyaan Percobaan 1 Nomor 4
+    // Pertanyaan Percobaan 1 Nomor 4 dan Tugas Praktikum
 
     public void InsertAt(int index, int key) {
         Node_18 newNode = new Node_18(key, null);
@@ -212,6 +211,66 @@ public class LinkedList_18 {
                 currentNode.next = newNode;
             }
         }
-    }  
-    
+    }
+
+    // Tugas Praktikum
+
+    public void InsertBefore(int key, int input) {
+        Node_18 newNode = new Node_18(input, null);
+
+        if (!IsEmpty()) {
+            if (head.data == key) {
+                newNode.next = head;
+                head = newNode;
+            } else {
+                Node_18 currentNode = head;
+
+                while (currentNode.next != null) {
+                    if (currentNode.next.data == key) {
+                        newNode.next = currentNode.next;
+                        currentNode.next = newNode;
+                        break;
+                    }
+
+                    currentNode = currentNode.next;
+                }
+            }
+        } else {
+            System.out.println("Linked List Kosong");
+        }
+    }
+
+    public void RemoveAt(int index){
+        if (IsEmpty()) {
+            System.out.println("Linked list kosong");
+            return;
+        }
+
+        if (index < 0 ) {
+            System.out.println("Indeks tidak valid");
+            return;
+        }
+
+        if (index == 0) {
+            RemoveFirst();
+            return;
+        }
+
+        Node_18 prevNode = null;
+        Node_18 currentNode = head;
+        int currentIndex = 0;
+
+        while (currentNode != null && currentIndex < index) {
+            prevNode = currentNode;
+            currentNode = currentNode.next;
+            currentIndex++;
+        }
+
+        if (currentNode == null) {
+            System.out.println("Indeks melebihi ukuran linked list");
+        }else{
+            prevNode.next = currentNode.next;
+        }
+    }
+
 }

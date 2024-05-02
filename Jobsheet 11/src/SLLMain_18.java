@@ -16,8 +16,9 @@ public class SLLMain_18 {
 
         // Percobaan 2
 
-        System.out.println("Data pada index ke-1             : " + myLinkedList_18.GetData(1));
+        System.out.println("\nData pada index ke-1             : " + myLinkedList_18.GetData(1));
         System.out.println("Data 300 berada pada index ke    : " + myLinkedList_18.IndexOf(300));
+        System.out.println("");
 
         myLinkedList_18.Remove(300);
         myLinkedList_18.Print();
@@ -28,9 +29,23 @@ public class SLLMain_18 {
 
         // Pertanyaan Percobaan 1 Nomor 4
 
-        System.out.println("Pertanyaan Percobaan 1 Nomor 4");
+        System.out.println("\nPertanyaan Percobaan 1 Nomor 4 (InsertAt)");
 
         myLinkedList_18.InsertAt(1,100);
+        myLinkedList_18.Print();
+
+        // Tugas Praktikum
+
+        System.out.println("\nInsert Before");
+        myLinkedList_18.InsertBefore(100, 250);
+        myLinkedList_18.Print();
+
+        System.out.println("\nInsert At");
+        myLinkedList_18.InsertAt(2, 450);
+        myLinkedList_18.Print();
+
+        System.out.println("\nRemove At");
+        myLinkedList_18.RemoveAt(3);
         myLinkedList_18.Print();
 
     }

@@ -14,6 +14,18 @@ public class SLLMain_18 {
         myLinkedList_18.InsertAfter(700, 300);
         myLinkedList_18.Print();
 
+        // Percobaan 2
+
+        System.out.println("Data pada index ke-1             : " + myLinkedList_18.GetData(1));
+        System.out.println("Data 300 berada pada index ke    : " + myLinkedList_18.IndexOf(300));
+
+        myLinkedList_18.Remove(300);
+        myLinkedList_18.Print();
+        myLinkedList_18.RemoveFirst();
+        myLinkedList_18.Print();
+        myLinkedList_18.RemoveLast();
+        myLinkedList_18.Print();
+
     }
 
 }

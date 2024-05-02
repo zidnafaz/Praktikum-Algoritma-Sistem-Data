@@ -61,7 +61,7 @@ public class LinkedList_18 {
 
     public void InsertAfter(int key, int input) {
         
-        Node_18 newNode = new Node_18(key, null);
+        Node_18 newNode = new Node_18(input, null);
 
         if (!IsEmpty()) {
             
@@ -83,6 +83,95 @@ public class LinkedList_18 {
 
             System.out.println("Linked List Kosong");
             
+        }
+
+    }
+
+    // Percobaan 2
+
+    public int GetData(int index) {
+
+        Node_18 currentNode = head;
+
+        for (int i = 0; i < index; i++) {
+            currentNode = currentNode.next;
+        }
+
+        return currentNode.data;
+
+    }
+
+    public int IndexOf(int key) {
+
+        Node_18 currentNode = head;
+        int index = 0;
+
+        while (currentNode != null && currentNode.data != key) {
+            currentNode = currentNode.next;
+            index++;
+        }
+
+        if (currentNode == null) {
+            return -1;
+        } else {
+            return index;
+        }
+
+    }
+
+    public void RemoveFirst() {
+
+        if (!IsEmpty()) {
+            head = head.next;
+        } else {
+            System.out.println("Linked List Kosong");
+        }
+
+    }
+
+    public void RemoveLast() {
+
+        if (IsEmpty()) {
+            System.out.println("Linked List Kosong");
+        } else if (head.next == null) {
+            head = null;
+        } else {
+
+            Node_18 currentNode = head;
+
+            while (currentNode.next != null) {
+                if (currentNode.next.next == null) {
+                    currentNode.next= null;
+                    break;
+                }
+                
+                currentNode = currentNode.next;
+
+            }
+        }
+
+    }
+
+    public void Remove(int key) {
+
+        if (IsEmpty()) {
+            System.out.println("Linked List kosong");
+        } else if (head.data == key) {
+            RemoveFirst();
+        } else {
+
+            Node_18 currentNode = head;
+
+            while (currentNode.next != null) {
+                if (currentNode.next.data == key) {
+                    currentNode.next = currentNode.next.next;
+                    break;
+                }
+
+                currentNode = currentNode.next;
+
+            }
+
         }
 
     }

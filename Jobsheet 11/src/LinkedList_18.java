@@ -97,7 +97,14 @@ public class LinkedList_18 {
             currentNode = currentNode.next;
         }
 
-        return currentNode.data;
+        // Modifikasi Pertanyaan Percobaan 2 Nomor 4
+
+        if (currentNode == null) {
+            System.out.println("Indeks melebihi jumlah node dalam linked list.");
+            return -1;
+        } else {
+            return currentNode.data;
+        }
 
     }
 
@@ -175,5 +182,36 @@ public class LinkedList_18 {
         }
 
     }
+
+
+    // Pertanyaan Percobaan 1 Nomor 4
+
+    public void InsertAt(int index, int key) {
+        Node_18 newNode = new Node_18(key, null);
+
+        if (index < 0) {
+            System.out.println("Indeks tidak valid");
+            return;
+        }
+
+        if (index == 0) {
+            AddFirst(key);
+        } else {
+            Node_18 currentNode = head;
+            int currentIndex = 0;
+
+            while (currentNode != null && currentIndex < index - 1) {
+                currentNode = currentNode.next;
+                currentIndex++;
+            }
+
+            if (currentNode == null) {
+                System.out.println("Indeks melebihi ukuran linked list");
+            } else {
+                newNode.next = currentNode.next;
+                currentNode.next = newNode;
+            }
+        }
+    }  
     
 }

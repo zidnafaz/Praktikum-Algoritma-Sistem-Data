@@ -26,6 +26,13 @@ public class SLLMain_18 {
         myLinkedList_18.RemoveLast();
         myLinkedList_18.Print();
 
+        // Pertanyaan Percobaan 1 Nomor 4
+
+        System.out.println("Pertanyaan Percobaan 1 Nomor 4");
+
+        myLinkedList_18.InsertAt(1,100);
+        myLinkedList_18.Print();
+
     }
 
 }

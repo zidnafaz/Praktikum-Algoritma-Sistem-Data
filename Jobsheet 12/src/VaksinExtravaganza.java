@@ -56,13 +56,24 @@ public class VaksinExtravaganza {
 
             if (IsEmpty()) {
                 throw new Exception("Linked lists masih kosong, tidak dapat dihapus!");
-            } else {
-                head = head.next;
-                head.prev = null;
+            } else if (head.next == null) {
+                System.out.println("Antrian nomor " + head.noAntrian + " dengan nama " + head.nama + " telah divaksinasi");
+                head = null;
                 size--;
+                return;
             }
-
+        
+            Antrian current = head;
+        
+            while (current.next.next != null) {
+                current = current.next;
+            }
+        
+            System.out.println("Antrian nomor " + current.next.noAntrian + " dengan nama " + current.next.nama + " telah divaksinasi");
+            current.next = null;
+            size--;
         }
+        
 
         public int Size() {
             return size;
@@ -75,12 +86,12 @@ public class VaksinExtravaganza {
                 System.out.println("========================================");
                 System.out.println("            DAFTAR ANTRIAN");
                 System.out.println("========================================");
-                System.out.println("|No Antrian\t|Nama\t\t");
+                System.out.println("|No Antrian\t|Nama\t\t|");
                 System.out.println("----------------------------------------");
 
                 while (tmp != null) {
 
-                    System.out.print("|" + tmp.noAntrian + "\t\t" + "|" + tmp.nama + "\t\t");
+                    System.out.println("|" + tmp.noAntrian + "\t\t" + "|" + tmp.nama + "\t\t|");
                     tmp = tmp.next;
 
                 }
@@ -148,6 +159,11 @@ public class VaksinExtravaganza {
                     break;
 
                 default:
+
+                    System.out.println("========================================");
+                    System.out.println("      MASUKKAN PILIHAN YANG BENAR");
+                    System.out.println("========================================");
+
                     break;
             }
 

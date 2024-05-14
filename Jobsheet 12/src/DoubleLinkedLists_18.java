@@ -105,12 +105,12 @@ public class DoubleLinkedLists_18 {
 
             while (tmp != null) {
                 
-                System.out.println(tmp.data + "\t");
+                System.out.print(tmp.data + "\t");
                 tmp = tmp.next;
 
             }
 
-            System.out.println("========================================");
+            System.out.println("\n========================================");
             System.out.println("Berhasil diisi");
 
         } else {
@@ -118,6 +118,76 @@ public class DoubleLinkedLists_18 {
             System.out.println("Linked lists kosong");
             
         }
+    }
+
+    // Percobaan 2
+
+    public void RemoveFirst() throws Exception {
+
+        if (IsEmpty()) {
+            throw new Exception("Linked lists masih kosong, tidak dapat dihapus!");
+        } else if (size == 1) {
+            RemoveLast();
+        } else {
+            head = head.next;
+            head.prev = null;
+            size--;
+        }
+
+    }
+
+    public void RemoveLast() throws Exception {
+
+        if (IsEmpty()) {
+            throw new Exception("Linked lists masih kosong, tidak dapat dihapus!");
+        } else if (head.next == null) {
+            head = null;
+            size--;
+            return;
+        }
+
+        Node_18 current = head;
+
+        while (current.next.next != null) {
+            current = current.next;
+        }
+
+        current.next = null;
+        size--;
+
+    }
+
+    public void Remove(int index) throws Exception {
+
+        if (IsEmpty() || index >= size) {
+            throw new Exception("Linked lists masih kosong, tidak dapat dihapus!");
+        } else if (index == 0) {
+            RemoveFirst();
+        } else {
+
+            Node_18 current = head;
+            int i = 0;
+
+            while (i < index) {
+                current = current.next;
+                i++;
+            }
+
+            if (current.next == null) {
+                current.prev.next = null;
+            } else if (current.prev == null) {
+                current = current.next;
+                current.prev = null;
+                head = current;
+            } else {
+                current.prev.next = current.next;
+                current.next.prev = current.prev;
+            }
+
+            size++;
+
+        }
+
     }
 
 }

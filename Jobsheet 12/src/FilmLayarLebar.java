@@ -116,19 +116,20 @@ public class FilmLayarLebar {
                 System.out.println("| No Film | Judul Film\t\t\t\t | Rating |");
                 System.out.println("----------------------------------------------------------------");
                 System.out.println(
-                        String.format("| %-8d| %-37s| %.2f   |", removedFilm.idFilm, removedFilm.judul, removedFilm.rating));
+                        String.format("| %-8d| %-37s| %.2f   |", removedFilm.idFilm, removedFilm.judul,
+                                removedFilm.rating));
                 System.out.println("================================================================");
                 head = null;
                 size--;
                 return;
             }
-        
+
             Film current = head;
-        
+
             while (current.next.next != null) {
                 current = current.next;
             }
-        
+
             Film removedFilm = current.next;
             System.out.println("================================================================");
             System.out.println("                       FILM YANG DIHAPUS");
@@ -136,13 +137,13 @@ public class FilmLayarLebar {
             System.out.println("| No Film | Judul Film\t\t\t\t | Rating |");
             System.out.println("----------------------------------------------------------------");
             System.out.println(
-                    String.format("| %-8d| %-37s| %.2f   |", removedFilm.idFilm, removedFilm.judul, removedFilm.rating));
+                    String.format("| %-8d| %-37s| %.2f   |", removedFilm.idFilm, removedFilm.judul,
+                            removedFilm.rating));
             System.out.println("================================================================");
-        
+
             current.next = null;
             size--;
         }
-        
 
         public void RemoveFirst() throws Exception {
 
@@ -319,6 +320,57 @@ public class FilmLayarLebar {
 
         }
 
+        public Film CariFilmByJudul(String judul) {
+            Film current = head;
+
+            while (current != null) {
+                if (current.judul.equalsIgnoreCase(judul)) {
+                    return current;
+                }
+                current = current.next;
+            }
+
+            return null;
+        }
+
+        public boolean RemoveFilmByJudul(String judul) throws Exception {
+            if (IsEmpty()) {
+                System.out.println("Linked lists masih kosong, tidak ada film yang dihapus!");
+                return false;
+            }
+
+            Film current = head;
+
+            while (current != null) {
+                if (current.judul.equalsIgnoreCase(judul)) {
+
+                    if (current.prev == null) {
+                        RemoveFirst();
+                    } else if (current.next == null) {
+                        RemoveLast();
+                    } else {
+                        System.out.println("================================================================");
+                        System.out.println("                       FILM YANG DIHAPUS");
+                        System.out.println("================================================================");
+                        System.out.println("| No Film | Judul Film\t\t\t\t | Rating |");
+                        System.out.println("----------------------------------------------------------------");
+                        System.out.println(
+                                String.format("| %-8d| %-37s| %.2f   |", current.idFilm, current.judul,
+                                        current.rating));
+                        System.out.println("================================================================");
+                        current.prev.next = current.next;
+                        current.next.prev = current.prev;
+                        size--;
+                    }
+                    return true;
+                }
+                current = current.next;
+            }
+
+            System.out.println("Film dengan judul " + judul + " tidak ditemukan");
+            return false;
+        }
+
     }
 
     public static void main(String[] args) throws Exception {
@@ -347,7 +399,9 @@ public class FilmLayarLebar {
             System.out.println("7. Tampilkan Daftar Film");
             System.out.println("8. Cari Film Berdasarkan Id Film");
             System.out.println("9. Urutkan Daftar Film Berdasarkan Rating (Desc)");
-            System.out.println("10. Keluar");
+            System.out.println("10. Cari Film Berdasarkan Judul");
+            System.out.println("11. Hapus Film Berdasarkan Judul");
+            System.out.println("12. Keluar");
             System.out.println("================================================================");
             System.out.print("Masukkan Pilihan    : ");
 
@@ -454,6 +508,61 @@ public class FilmLayarLebar {
                 case 9:
                     dll.PrintDescending();
                     break;
+                case 10:
+
+                    System.out.println("================================================================");
+                    System.out.println("                      CARI FILM LAYAR LEBAR");
+                    System.out.println("================================================================");
+
+                    System.out.print("Masukkan ID Film yang akan dicari         : ");
+                    String cariJudul = input18String.nextLine();
+                    Film hasilJudul = dll.CariFilmByJudul(cariJudul);
+
+                    if (hasilJudul != null) {
+
+                        System.out.println("================================================================");
+                        System.out.println("                      HASIL PENCARIAN FILM");
+                        System.out.println("================================================================");
+                        System.out.println("| No Film | Judul Film\t\t\t\t | Rating |");
+                        System.out.println("----------------------------------------------------------------");
+                        System.out.println(
+                                String.format("| %-8d| %-37s| %.2f   |", hasilJudul.idFilm, hasilJudul.judul,
+                                        hasilJudul.rating));
+                        System.out.println("================================================================");
+
+                    } else {
+                        System.out.println("Film dengan judul " + cariJudul + " tidak ditemukan");
+                    }
+
+                    break;
+                case 11:
+                    System.out.println("================================================================");
+                    System.out.println("              HAPUS FILM BERDASARKAN JUDUL");
+                    System.out.println("================================================================");
+                    System.out.print("Masukkan judul film yang akan dihapus    : ");
+                    input18.nextLine();
+                    String judulHapus = input18.nextLine();
+                    Film filmHapus = dll.CariFilmByJudul(judulHapus);
+                    if (filmHapus != null) {
+                        System.out.println("================================================================");
+                        System.out.println("                    FILM YANG DIHAPUS");
+                        System.out.println("================================================================");
+                        System.out.println("| No Film | Judul Film\t\t\t\t | Rating |");
+                        System.out.println("----------------------------------------------------------------");
+                        System.out.println(
+                                String.format("| %-8d| %-37s| %.2f   |", filmHapus.idFilm, filmHapus.judul,
+                                        filmHapus.rating));
+                        System.out.println("================================================================");
+                        dll.RemoveFilmByJudul(judulHapus);
+                    } else {
+                        System.out.println("Film dengan judul " + judulHapus + " tidak ditemukan");
+                    }
+                    break;
+                case 12:
+                    System.out.println("================================================================");
+                    System.out.println("                        TERIMA KASIH");
+                    System.out.println("================================================================");
+                    break;
                 default:
                     System.out.println("================================================================");
                     System.out.println("                     PILIHAN TIDAK VALID");
@@ -461,7 +570,7 @@ public class FilmLayarLebar {
                     break;
             }
 
-        } while (pilihan != 10);
+        } while (pilihan != 12);
 
         input18.close();
         input18String.close();

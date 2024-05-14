@@ -73,6 +73,8 @@ public class VaksinExtravaganza {
 
                 Antrian tmp = head;
                 System.out.println("========================================");
+                System.out.println("            DAFTAR ANTRIAN");
+                System.out.println("========================================");
                 System.out.println("|No Antrian\t|Nama\t\t");
                 System.out.println("----------------------------------------");
 

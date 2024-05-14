@@ -60,6 +60,33 @@ public class DoubleLinkedListsMain {
 
         System.out.println("Size    : " + dll.size);
         System.out.println("\n========================================");
+
+        // Percobaan 3
+
+        dll.Clear();
+
+        dll.Print();
+
+        System.out.println("Size    : " + dll.size);
+        System.out.println("\n========================================");
+
+        dll.AddFirst(3);
+        dll.AddLast(4);
+        dll.AddFirst(7);
+        dll.Print();
+
+        System.out.println("Size    : " + dll.size);
+        System.out.println("\n========================================");
+
+        dll.Add(40, 1);
+        dll.Print();
+
+        System.out.println("Size    : " + dll.size);
+        System.out.println("\n========================================");
+        
+        System.out.println("Data awal pada Linked Lists adalah : " + dll.GetFirst());
+        System.out.println("Data akhir pada Linked Lists adalah : " + dll.GetLast());
+        System.out.println("Data ke-1 pada Linked Lists adalah : " + dll.Get(1));
         
     }
 }

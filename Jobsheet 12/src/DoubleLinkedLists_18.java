@@ -184,9 +184,50 @@ public class DoubleLinkedLists_18 {
                 current.next.prev = current.prev;
             }
 
-            size++;
+            size--;
 
         }
+
+    }
+
+    // Percobaan 3
+
+    public int GetFirst() throws Exception {
+        if (IsEmpty()) {
+            throw new Exception("Linked masih kosong");
+        }
+
+        return head.data;
+
+    }
+
+    public int GetLast() throws Exception {
+        if (IsEmpty()) {
+            throw new Exception("Linked masih kosong");
+        }
+
+        Node_18 tmp = head;
+
+        while (tmp.next != null) {
+            tmp = tmp.next;
+        }
+        
+        return tmp.data;
+
+    }
+
+    public int Get(int index) throws Exception {
+        if (IsEmpty()) {
+            throw new Exception("Linked masih kosong");
+        }
+
+        Node_18 tmp = head;
+
+        for (int i = 0; i < index; i++) {
+            tmp = tmp.next;
+        }
+        
+        return tmp.data;
 
     }
 

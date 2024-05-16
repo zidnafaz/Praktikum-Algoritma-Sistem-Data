@@ -48,6 +48,45 @@ public class SLLMain_18 {
         myLinkedList_18.RemoveAt(3);
         myLinkedList_18.Print();
 
+        // Demo
+
+        System.out.println("\nDemo");
+
+        System.out.println("\nData Awal");
+        myLinkedList_18.Print();
+
+        System.out.println("\nAdd First");
+        myLinkedList_18.AddFirst(905);
+        myLinkedList_18.Print();
+        
+        System.out.println("\nAdd Last");
+        myLinkedList_18.AddLast(340);
+        myLinkedList_18.Print();
+
+        System.out.println("\nInsert At");
+        myLinkedList_18.InsertAt(1, 110);
+        myLinkedList_18.Print();
+
+        System.out.println("\nRemove First");
+        myLinkedList_18.RemoveFirst();
+        myLinkedList_18.Print();
+
+        System.out.println("\nRemove Last");
+        myLinkedList_18.RemoveLast();
+        myLinkedList_18.Print();
+
+        System.out.println("\nRemove At");
+        myLinkedList_18.RemoveAt(1);
+        myLinkedList_18.Print();
+
+        System.out.println("\nRemove");
+        myLinkedList_18.Remove(250);
+        myLinkedList_18.Print();
+
+        System.out.println("\nInsert Before");
+        myLinkedList_18.InsertBefore(450, 780);
+        myLinkedList_18.Print();
+
     }
 
 }

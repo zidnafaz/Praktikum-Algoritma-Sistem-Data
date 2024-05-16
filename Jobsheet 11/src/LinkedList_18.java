@@ -13,7 +13,7 @@ public class LinkedList_18 {
             Node_18 currentNode = head;
 
             while (currentNode != null) {
-                System.out.print(currentNode.data + "\t");
+                System.out.print(currentNode.data + " | ");
                 currentNode = currentNode.next;
             }
 

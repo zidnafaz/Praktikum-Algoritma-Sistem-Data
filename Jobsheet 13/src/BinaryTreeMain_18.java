@@ -1,3 +1,5 @@
+import org.w3c.dom.Node;
+
 public class BinaryTreeMain_18 {
 
     public static class Node_18 {
@@ -34,19 +36,19 @@ public class BinaryTreeMain_18 {
             } else {
                 Node_18 current = root;
                 while (true) {
-                    if (data < current.data) {
+                    if (data > current.data) {
                         if (current.left == null) {
+                            current = current.left;                            
+                        } else {
                             current.left = new Node_18(data);
                             break;
-                        } else {
-                            current = current.left;
                         }
-                    } else if (data > current.data) {
-                        if (current.right == null) {
+                    } else if (data < current.data) {
+                        if (current.right == null) {                            
+                            current = current.right;
+                        } else {
                             current.right = new Node_18(data);
                             break;
-                        } else {
-                            current = current.right;
                         }
                     } else {
                         break;
@@ -188,6 +190,11 @@ public class BinaryTreeMain_18 {
                 successor.left = current.left;
             }
         }
+
+        // Tugas Praktikum 1 (Rekursif)
+
+        void Rekursif(Node_18 current, int data) 
+
     }
 
     // Percobaan 2
@@ -252,7 +259,7 @@ public class BinaryTreeMain_18 {
         bt.TraversePreOrder(bt.root);
         System.out.println();
 
-        System.out.println("\nPercobaan 2\n");
+        System.out.println("Percobaan 2\n");
 
         BinaryTreeArray_18 bta = new BinaryTreeArray_18();
         int data[] = {6, 4, 8, 3, 5, 7, 9, 0, 0, 0};

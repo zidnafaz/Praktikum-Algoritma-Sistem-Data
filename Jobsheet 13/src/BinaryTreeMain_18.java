@@ -191,9 +191,95 @@ public class BinaryTreeMain_18 {
             }
         }
 
-        // Tugas Praktikum 1 (Rekursif)
+        // Tugas 1 (Rekursif)
 
-        void Rekursif(Node_18 current, int data) 
+        void Rekursif(Node_18 current, int data) {
+
+            if (data < current.data) {
+                if (current.left != null) {
+                    Rekursif(current.left, data);
+                } else {
+                    current.left = new Node_18(data);
+                }
+            } else if (data > current.data) {
+                if (current.right != null) {
+                    Rekursif(current.right, data);
+                } else {
+                    current.right = new Node_18(data);
+                }
+            }
+
+        }
+
+        void AddRekursif(int nilai) {
+            if (root == null) {
+                root = new Node_18(nilai);
+            } else {
+                Rekursif(root, nilai);
+            }
+        }
+
+        // Tugas 2 Nilai terkecil dan terbesar
+
+        int CariTerkecil() {
+
+            Node_18 current = root;
+
+            if (current == null) {
+                System.out.println("Tree is empty");
+            }
+
+            while (current.left != null) {
+                current = current.left;
+            }
+
+            return current.data;
+
+        }
+
+        int CariTerbesar() {
+
+            Node_18 current = root;
+
+            if (current == null) {
+                System.out.println("Tree is empty");
+            }
+
+            while (current.left != null) {
+                current = current.right;
+            }
+
+            return current.data;
+
+        }
+
+        // Tugas 3 Menampilkan data di leaf
+
+        void PrintLeaf(Node_18 node) {
+            if (node == null) {
+                return;
+            } else if (node.left == null && node.right == null) {
+                System.out.println(node.data + " ");
+            }
+
+            PrintLeaf(node.left);
+            PrintLeaf(node.right);
+
+        }
+
+        // Tugas 4 Menampilkan jumlah leaf didalam tree
+
+        int CountLeaf(Node_18 node) {
+
+            if (node == null) {
+                return 0;
+            } else if (node.left == null && node.right == null) {
+                return 1;
+            }
+
+            return CountLeaf(node.left) + CountLeaf(node.right);
+
+        }
 
     }
 
@@ -218,6 +304,33 @@ public class BinaryTreeMain_18 {
                 TraverseInOrder(2 * idxStart + 1);
                 System.out.print(data[idxStart] + " ");
                 TraverseInOrder(2 * idxStart + 2);
+            }
+        }
+
+        
+        // Tugas 5 Method untuk memasukkan data kedalam tree dan method TraversePreorder() + TraversePostOrder
+
+        void Add(int newData) {
+            if (idxlast == data.length - 1) {
+                System.out.println("Tree is full");
+                return;
+            }
+            data[idxlast++] = newData;
+        }
+
+        void TraversePreOrder(int idxStart) {
+            if (idxStart <= idxlast) {
+                System.out.println(data[idxStart] + " ");
+                TraversePreOrder(2 * idxStart + 1);
+                TraversePreOrder(2 * idxStart + 2);
+            }
+        }
+        
+        void TraversePostOrder(int idxStart) {
+            if (idxStart <= idxlast) {
+                TraversePostOrder(2 * idxStart + 1);
+                TraversePostOrder(2 * idxStart + 2);
+                System.out.println(data[idxStart] + " ");
             }
         }
 

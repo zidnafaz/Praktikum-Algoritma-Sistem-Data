@@ -1,5 +1,3 @@
-import org.w3c.dom.Node;
-
 public class BinaryTreeMain_18 {
 
     public static class Node_18 {

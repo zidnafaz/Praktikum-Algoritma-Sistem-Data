@@ -14,6 +14,8 @@ public class BinaryTreeMain_18 {
         }
     }
 
+    // Percobaan 1
+
     public static class BinaryTree_18 {
         Node_18 root;
         int size;
@@ -188,7 +190,35 @@ public class BinaryTreeMain_18 {
         }
     }
 
+    // Percobaan 2
+
+    public static class BinaryTreeArray_18 {
+    
+        int[] data;
+        int idxlast;
+
+        public BinaryTreeArray_18() {
+            data = new int[18];
+        }
+
+        void PopulateData(int data[], int idxlast) {
+            this.data = data;
+            this.idxlast = idxlast;
+        }
+
+        void TraverseInOrder(int idxStart) {
+            if (idxStart <= idxlast) {
+                TraverseInOrder(2 * idxStart + 1);
+                System.out.print(data[idxStart] + " ");
+                TraverseInOrder(2 * idxStart + 2);
+            }
+        }
+
+    }
+
     public static void main(String[] args) {
+        System.out.println("Percobaan 1\n");
+        
         BinaryTree_18 bt = new BinaryTree_18();
 
         bt.Add(6);
@@ -201,19 +231,19 @@ public class BinaryTreeMain_18 {
         bt.Add(10);
         bt.Add(15);
 
-        System.out.print("Pre Order Traversal:");
+        System.out.print("Pre Order Traversal   : ");
         bt.TraversePreOrder(bt.root);
         System.out.println();
 
-        System.out.print("In Order Traversal:");
+        System.out.print("In Order Traversal    : ");
         bt.TraverseInOrder(bt.root);
         System.out.println();
 
-        System.out.print("Post Order Traversal:");
+        System.out.print("Post Order Traversal  : ");
         bt.TraversePostOrder(bt.root);
         System.out.println();
 
-        System.out.print("Find Node 5: " + bt.Find(5));
+        System.out.println("Find Node 5: " + bt.Find(5));
         System.out.println("Delete Node 8");
         bt.delete(8);
 
@@ -221,5 +251,17 @@ public class BinaryTreeMain_18 {
         System.out.print("Pre Order Traversal:");
         bt.TraversePreOrder(bt.root);
         System.out.println();
+
+        System.out.println("\nPercobaan 2\n");
+
+        BinaryTreeArray_18 bta = new BinaryTreeArray_18();
+        int data[] = {6, 4, 8, 3, 5, 7, 9, 0, 0, 0};
+        int idxlast = 6;
+
+        bta.PopulateData(data, idxlast);
+        System.out.print("\nInOrder Traversal   : ");
+        bta.TraverseInOrder(0);
+        System.out.println("\n");
+
     }
 }

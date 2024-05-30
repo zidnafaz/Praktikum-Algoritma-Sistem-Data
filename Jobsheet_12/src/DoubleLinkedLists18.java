@@ -1,9 +1,9 @@
-public class DoubleLinkedLists_18 {
+public class DoubleLinkedLists18 {
 
-    Node_18 head;
+    Node18 head;
     int size;
 
-    public DoubleLinkedLists_18() {
+    public DoubleLinkedLists18() {
         head = null;
         size = 0;
     }
@@ -16,11 +16,11 @@ public class DoubleLinkedLists_18 {
         
         if (IsEmpty()) {
 
-            head = new Node_18(null, item, null);
+            head = new Node18(null, item, null);
 
         } else {
 
-            Node_18 newNode = new Node_18(null, item, head);
+            Node18 newNode = new Node18(null, item, head);
             head.prev = newNode;
             head = newNode;
 
@@ -36,11 +36,11 @@ public class DoubleLinkedLists_18 {
         if (IsEmpty()) {
             AddFirst(item);
         } else {
-            Node_18 cureent = head;
+            Node18 cureent = head;
             while (cureent.next != null) {
                 cureent = cureent.next;
             }
-            Node_18 newNode = new Node_18(cureent, item, null);
+            Node18 newNode = new Node18(cureent, item, null);
             cureent.next = newNode;
             size++;
         }
@@ -59,7 +59,7 @@ public class DoubleLinkedLists_18 {
             
         } else {
 
-            Node_18 current = head;
+            Node18 current = head;
             int i = 0;
 
             while (i < index) {
@@ -69,13 +69,13 @@ public class DoubleLinkedLists_18 {
 
             if (current.prev == null) {
                 
-                Node_18 newNode = new Node_18(null, item, current);
+                Node18 newNode = new Node18(null, item, current);
                 current.prev = newNode;
                 head = newNode;
 
             } else {
 
-                Node_18 newNode = new Node_18(current.prev, item, current);
+                Node18 newNode = new Node18(current.prev, item, current);
                 newNode.prev = current.prev;
                 newNode.next = current;
                 current.prev.next = newNode;
@@ -101,7 +101,7 @@ public class DoubleLinkedLists_18 {
     public void Print() {
         if (!IsEmpty()) {
             
-            Node_18 tmp = head;
+            Node18 tmp = head;
 
             while (tmp != null) {
                 
@@ -146,7 +146,7 @@ public class DoubleLinkedLists_18 {
             return;
         }
 
-        Node_18 current = head;
+        Node18 current = head;
 
         while (current.next.next != null) {
             current = current.next;
@@ -165,7 +165,7 @@ public class DoubleLinkedLists_18 {
             RemoveFirst();
         } else {
 
-            Node_18 current = head;
+            Node18 current = head;
             int i = 0;
 
             while (i < index) {
@@ -206,7 +206,7 @@ public class DoubleLinkedLists_18 {
             throw new Exception("Linked masih kosong");
         }
 
-        Node_18 tmp = head;
+        Node18 tmp = head;
 
         while (tmp.next != null) {
             tmp = tmp.next;
@@ -221,7 +221,7 @@ public class DoubleLinkedLists_18 {
             throw new Exception("Linked masih kosong");
         }
 
-        Node_18 tmp = head;
+        Node18 tmp = head;
 
         for (int i = 0; i < index; i++) {
             tmp = tmp.next;

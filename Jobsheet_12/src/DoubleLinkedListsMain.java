@@ -5,7 +5,7 @@ public class DoubleLinkedListsMain {
 
         Scanner input18 = new Scanner(System.in);
 
-        DoubleLinkedLists_18 dll = new DoubleLinkedLists_18();
+        DoubleLinkedLists18 dll = new DoubleLinkedLists18();
         System.out.println("========================================");
         dll.Print();
 

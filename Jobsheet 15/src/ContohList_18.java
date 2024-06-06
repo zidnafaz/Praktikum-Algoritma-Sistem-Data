@@ -26,6 +26,15 @@ public class ContohList_18 {
 
         // Pertanyaan Percobaan 1
 
+        List<Integer> LI = new ArrayList<>();
+
+        LI.add(100);
+        LI.add(200);
+        LI.add(300);
+
+        System.out.printf("\nElemen 0 : %d total elemen : %d elemen terakhir : %s\n", LI.get(0), LI.size(),
+                LI.get(LI.size() - 1));
+
         LinkedList<String> names = new LinkedList<>();
 
         names.add("Noureen");
@@ -34,7 +43,7 @@ public class ContohList_18 {
         names.add("Uwais");
         names.add("Al-Qarni");
 
-        System.out.printf("Elemen 0 : %s total elemen : %s elemen terakhir : %s\n", names.get(0), names.size(),
+        System.out.printf("\nElemen 0 : %s total elemen : %s elemen terakhir : %s\n", names.get(0), names.size(),
                 names.get(names.size() - 1));
 
         names.set(0, "My Kid");

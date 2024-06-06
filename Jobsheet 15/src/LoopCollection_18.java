@@ -5,12 +5,24 @@ public class LoopCollection_18 {
     public static void main(String[] args) {
 
         Stack<String> fruits = new Stack<>();
+        
+        // Pertanyaan Percobaan 2
+
+        // List<String> fruits = new Stack<>();
 
         fruits.push("Banana");
         fruits.add("Orange");
         fruits.add("Watermelon");
         fruits.add("Leci");
         fruits.add("Salak");
+        fruits.pop();
+        fruits.add("Strawberry");
+
+        fruits.add("Mango");
+        fruits.add("Guava");
+        fruits.add("Avocado");
+
+        Collections.sort(fruits);
 
         for (String fruit : fruits) {
             System.out.printf("%s ", fruit);
@@ -22,8 +34,8 @@ public class LoopCollection_18 {
             System.out.printf("%s ", fruits.pop());
         }
 
-        fruits.push("Melon");
-        fruits.push("Durian");
+        // fruits.push("Melon");
+        // fruits.push("Durian");
 
         System.out.println("");
 

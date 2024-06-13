@@ -1,3 +1,8 @@
+// Nama         : M. Zidna Billah Faza
+// No. Absen    : 18
+// Kelas        : SIB 1 E
+// Github       : https://github.com/zidnafaz/Praktikum-Algoritma-Struktur-Data/tree/main/UAS
+
 package program;
 
 import java.util.Scanner;

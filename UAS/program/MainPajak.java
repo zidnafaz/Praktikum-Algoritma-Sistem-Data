@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class MainPajak {
 
-    private static LinkedList_18 transaksiPajakList = new LinkedList_18();
+    public static LinkedList_18 transaksiPajakList = new LinkedList_18();
 
-    private static Kendaraan[] kendaraanList = {
+    public static Kendaraan[] kendaraanList = {
             new Kendaraan("B 1234 CD", "Andi", "Mobil", 1500, 2020, 6),
             new Kendaraan("D 5678 EF", "Budi", "Mobil", 1800, 2019, 12),
             new Kendaraan("E 9101 GH", "Dini", "Motor", 250, 2021, 3),
@@ -14,7 +14,7 @@ public class MainPajak {
             new Kendaraan("G 3344 KL", "Arto", "Motor", 125, 2023, 4)
     };
 
-    private static Scanner input_18 = new Scanner(System.in);
+    public static Scanner input_18 = new Scanner(System.in);
 
     public static void main(String[] args) {
         int pilihan;
@@ -77,7 +77,7 @@ public class MainPajak {
         System.out.println();
     }
 
-    private static void daftarKendaraan() {
+    public static void daftarKendaraan() {
         headerTipis();
         System.out.println(" | TNKB\t\t | Nama\t\t | Jenis\t\t | CC\t\t | Tahun\t | Bulan Harus Bayar\t | ");
         headerTipis();
@@ -86,7 +86,7 @@ public class MainPajak {
         }
     }
 
-    private static void bayarPajak() {
+    public static void bayarPajak() {
         System.out.print("Masukkan TNKB Kendaraan   : ");
         String tnkb = input_18.next();
         Kendaraan kendaraan = null;
@@ -118,7 +118,7 @@ public class MainPajak {
         
     }
 
-    private static long hitungNominalBayar(Kendaraan kendaraan) {
+    public static long hitungNominalBayar(Kendaraan kendaraan) {
         if (kendaraan.jenis.equals("Motor")) {
             if (kendaraan.cc < 100) {
                 return 100000;
@@ -139,7 +139,7 @@ public class MainPajak {
         return 0;
     }
 
-    private static long hitungDenda(Kendaraan kendaraan, int bulanBayar) {
+    public static long hitungDenda(Kendaraan kendaraan, int bulanBayar) {
         int bulanHarusBayar = kendaraan.bulanHarusBayar;
         int selisihBulan = bulanBayar - bulanHarusBayar;
 
@@ -153,7 +153,7 @@ public class MainPajak {
         return 0;
     }
 
-    private static void tampilkanSeluruhTransaksi() {
+    public static void tampilkanSeluruhTransaksi() {
         header();
         System.out.println("            Seluruh Transaksi");
         header();
@@ -166,7 +166,7 @@ public class MainPajak {
         System.out.println("Total Pendapatan        : " + transaksiPajakList.calculateTotal());
     }
 
-    private static void urutkanTransaksiBerdasarkanNamaPemilik() {
+    public static void urutkanTransaksiBerdasarkanNamaPemilik() {
         LinkedList_18 sortedList = new LinkedList_18();
         Node_18 currentNode = transaksiPajakList.head;
 
@@ -182,7 +182,7 @@ public class MainPajak {
         sortedList.print();
     }
 
-    private static void urutkanTransaksiBerdasarkanHurufNamaAM() {
+    public static void urutkanTransaksiBerdasarkanHurufNamaAM() {
         LinkedList_18 groupAtoM = new LinkedList_18();
         LinkedList_18 groupNtoZ = new LinkedList_18();
         Node_18 currentNode = transaksiPajakList.head;
@@ -207,7 +207,7 @@ public class MainPajak {
         groupAtoM.print();
     }
 
-    private static void urutkanTransaksiBerdasarkanHurufNamaNZ() {
+    public static void urutkanTransaksiBerdasarkanHurufNamaNZ() {
         LinkedList_18 groupAtoM = new LinkedList_18();
         LinkedList_18 groupNtoZ = new LinkedList_18();
         Node_18 currentNode = transaksiPajakList.head;

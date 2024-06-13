@@ -26,8 +26,9 @@ public class MainPajak {
             System.out.println("2. Bayar Pajak");
             System.out.println("3. Tampilkan Seluruh Transaksi");
             System.out.println("4. Urutkan Transaksi Berdasarkan Nama Pemilik");
-            System.out.println("5. Urutkan Transaksi Berdasarkan Huruf Nama A-M dan N-Z");
-            System.out.println("6. Keluar");
+            System.out.println("5. Urutkan Transaksi Berdasarkan Huruf Nama A-M");
+            System.out.println("6. Urutkan Transaksi Berdasarkan Huruf Nama N-Z");
+            System.out.println("7. Keluar");
             header();
             System.out.print("Masukkan pilihan          : ");
             pilihan = input_18.nextInt();
@@ -46,15 +47,20 @@ public class MainPajak {
                     urutkanTransaksiBerdasarkanNamaPemilik();
                     break;
                 case 5:
-                    urutkanTransaksiBerdasarkanHurufNama();
+                    urutkanTransaksiBerdasarkanHurufNamaAM();
                     break;
                 case 6:
-                    System.out.println("Keluar...");
+                    urutkanTransaksiBerdasarkanHurufNamaNZ();
+                    break;
+                case 7:
+                    header();
+                    System.out.println("               Terimakasih");
+                    header();
                     break;
                 default:
                     System.out.println("Pilihan tidak valid!");
             }
-        } while (pilihan != 6);
+        } while (pilihan != 7);
     }
 
     public static void header() {
@@ -176,7 +182,7 @@ public class MainPajak {
         sortedList.print();
     }
 
-    private static void urutkanTransaksiBerdasarkanHurufNama() {
+    private static void urutkanTransaksiBerdasarkanHurufNamaAM() {
         LinkedList_18 groupAtoM = new LinkedList_18();
         LinkedList_18 groupNtoZ = new LinkedList_18();
         Node_18 currentNode = transaksiPajakList.head;
@@ -199,6 +205,22 @@ public class MainPajak {
         System.out.println(" | Kode\t | TNKB\t\t | Nama\t\t | Nominal\t\t | Denda\t | ");
         headerTipis();        
         groupAtoM.print();
+    }
+
+    private static void urutkanTransaksiBerdasarkanHurufNamaNZ() {
+        LinkedList_18 groupAtoM = new LinkedList_18();
+        LinkedList_18 groupNtoZ = new LinkedList_18();
+        Node_18 currentNode = transaksiPajakList.head;
+
+        while (currentNode != null) {
+            char firstLetter = currentNode.data.kendaraan.nama.charAt(0);
+            if (firstLetter >= 'A' && firstLetter <= 'M') {
+                groupAtoM.addLast(currentNode.data);
+            } else if (firstLetter >= 'N' && firstLetter <= 'Z') {
+                groupNtoZ.addLast(currentNode.data);
+            }
+            currentNode = currentNode.next;
+        }
 
         header();
         System.out.println("           Transaksi Nama N-Z");

@@ -3,17 +3,19 @@ package ProgramNonCollection;
 import java.util.Scanner;
 
 public class LaundryMain_18 {
-    
+
     public static LinkedListPelanggan_18 listPelanggan = new LinkedListPelanggan_18();
     public static LinkedListTransaksi_18 listTransaksi = new LinkedListTransaksi_18();
+
     public static Scanner input18 = new Scanner(System.in);
 
     public static void main(String[] args) {
-        listPelanggan.addLast(new Pelanggan_18(1, "Ahmad", "081234567890"));
-        listPelanggan.addLast(new Pelanggan_18(2, "Budi", "081234567891"));
-        listPelanggan.addLast(new Pelanggan_18(3, "Sandi", "081234567892"));
-        listPelanggan.addLast(new Pelanggan_18(4, "Dewi", "081234567893"));
-        listPelanggan.addLast(new Pelanggan_18(5, "Eka", "081234567894"));
+
+        listPelanggan.addLast(new Pelanggan_18(1, "Rahma", "081234567890"));
+        listPelanggan.addLast(new Pelanggan_18(2, "Eko", "081234567891"));
+        listPelanggan.addLast(new Pelanggan_18(3, "Imam", "081234567892"));
+        listPelanggan.addLast(new Pelanggan_18(4, "Aura", "081234567893"));
+        listPelanggan.addLast(new Pelanggan_18(5, "Bella", "081234567894"));
 
         int pilihan;
 
@@ -219,8 +221,10 @@ public class LaundryMain_18 {
         NodeTransaksi_18 currentNode = listTransaksi.head;
         while (currentNode != null) {
             if (currentNode.transaksi.pelanggan.namaPelanggan.equalsIgnoreCase(namaPelanggan)) {
-                System.out.println("| " + currentNode.transaksi.pelanggan.idPelanggan + "\t| " + currentNode.transaksi.pelanggan.namaPelanggan + "\t| "
-                        + currentNode.transaksi.jenisLayanan + "\t| " + currentNode.transaksi.jumlah + "\t| " + currentNode.transaksi.harga + "\t|");
+                System.out.println("| " + currentNode.transaksi.idTransaksi + "\t| "
+                        + currentNode.transaksi.pelanggan.namaPelanggan + "\t\t\t| "
+                        + currentNode.transaksi.jenisLayanan + "\t| " + currentNode.transaksi.jumlah + "\t\t| "
+                        + currentNode.transaksi.harga + "\t|");
             }
             currentNode = currentNode.next;
         }
